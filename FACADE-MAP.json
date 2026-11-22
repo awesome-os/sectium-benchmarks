@@ -1,0 +1,318 @@
+{
+  "$schema": "./facade-map.schema.json",
+  "schemaVersion": "1.0.0",
+  "generatedBy": "tfb-upstream-sync",
+  "worktree": "E:/awesome-os-techempower",
+  "branch": "benchmarks/techempower",
+  "upstreams": {
+    "FrameworkBenchmarks": {
+      "url": "https://github.com/TechEmpower/FrameworkBenchmarks.git",
+      "commit": "57d92fb",
+      "cloneMode": "sparse-shallow",
+      "relativePath": "benchmarks/techempower/upstream/FrameworkBenchmarks",
+      "sparsePaths": [
+        "frameworks/JavaScript/nodejs",
+        "frameworks/Java/undertow",
+        "frameworks/Java/servlet",
+        "frameworks/C/lwan",
+        "frameworks/PHP/php"
+      ],
+      "frameworkCount": 5,
+      "totalFrameworkFiles": 104
+    },
+    "just-js-techempower": {
+      "url": "https://github.com/awesome-os/techempower.git",
+      "upstreamOrigin": "https://github.com/just-js/techempower.git",
+      "commit": "22f68cf",
+      "cloneMode": "shallow",
+      "relativePath": "benchmarks/techempower/upstream/just-js-techempower",
+      "frameworkCount": 1,
+      "totalFrameworkFiles": 10
+    }
+  },
+  "frameworks": [
+    {
+      "id": "lwan",
+      "displayName": "Lwan",
+      "upstream": "FrameworkBenchmarks",
+      "relativePath": "benchmarks/techempower/upstream/FrameworkBenchmarks/frameworks/C/lwan",
+      "language": "C",
+      "classification": "Micro",
+      "port": 8080,
+      "fileCount": 13,
+      "variants": [
+        "default",
+        "lua"
+      ],
+      "endpoints": {
+        "/plaintext": "/plaintext",
+        "/json": "/json",
+        "/db": "/db",
+        "/queries": "/queries?queries=",
+        "/fortunes": "/fortunes",
+        "/updates": null,
+        "/cached-queries": "/cached-queries?count="
+      },
+      "mappedFacades": [
+        "c11-native"
+      ],
+      "notes": "C11 native HTTP server baseline; default variant omits /updates in upstream benchmark_config.json."
+    },
+    {
+      "id": "nodejs",
+      "displayName": "Node.js",
+      "upstream": "FrameworkBenchmarks",
+      "relativePath": "benchmarks/techempower/upstream/FrameworkBenchmarks/frameworks/JavaScript/nodejs",
+      "language": "JavaScript",
+      "classification": "Platform",
+      "port": 8080,
+      "fileCount": 16,
+      "variants": [
+        "default",
+        "mongodb",
+        "mongodb-raw",
+        "mysql",
+        "mysql-raw",
+        "postgresjs-raw",
+        "postgres"
+      ],
+      "endpoints": {
+        "/plaintext": "/plaintext",
+        "/json": "/json",
+        "/db": "/db",
+        "/queries": "/queries?queries=",
+        "/fortunes": "/fortunes",
+        "/updates": "/updates?queries=",
+        "/cached-queries": "/cached?queries="
+      },
+      "mappedFacades": [
+        "sectium-node",
+        "sectium-es"
+      ],
+      "notes": "Node.js HTTP/DB reference; /plaintext and /json live on default, DB endpoints on postgres/postgresjs-raw/mysql/mongodb variants."
+    },
+    {
+      "id": "just-js",
+      "displayName": "just-js",
+      "upstream": "just-js-techempower",
+      "relativePath": "benchmarks/techempower/upstream/just-js-techempower",
+      "language": "JavaScript",
+      "classification": "Platform",
+      "port": 8080,
+      "fileCount": 10,
+      "variants": [
+        "default"
+      ],
+      "endpoints": {
+        "/plaintext": "/plaintext",
+        "/json": "/json",
+        "/db": "/db",
+        "/queries": "/query?q=",
+        "/fortunes": "/fortunes",
+        "/updates": "/update?q=",
+        "/cached-queries": "/cached-world?q="
+      },
+      "mappedFacades": [
+        "just-js/lo",
+        "sectium-es"
+      ],
+      "notes": "Forked awesome-os/techempower (from just-js/techempower); low-overhead V8/lo socket server with custom /query?q= and /update?q= paths."
+    },
+    {
+      "id": "undertow",
+      "displayName": "Undertow",
+      "upstream": "FrameworkBenchmarks",
+      "relativePath": "benchmarks/techempower/upstream/FrameworkBenchmarks/frameworks/Java/undertow",
+      "language": "Java",
+      "classification": "Platform",
+      "port": 8080,
+      "fileCount": 7,
+      "variants": [
+        "default",
+        "postgresql"
+      ],
+      "endpoints": {
+        "/plaintext": "/plaintext",
+        "/json": "/json",
+        "/db": "/db",
+        "/queries": "/queries?queries=",
+        "/fortunes": "/fortunes",
+        "/updates": "/updates?queries=",
+        "/cached-queries": null
+      },
+      "mappedFacades": [
+        "sectium-jvm-tier0",
+        "sectium-jvm-tier2-aot"
+      ],
+      "notes": "Non-blocking Java HTTP handler platform; upstream tags include 'broken' for container build, source handlers remain valid TFB reference."
+    },
+    {
+      "id": "servlet",
+      "displayName": "Java Servlet",
+      "upstream": "FrameworkBenchmarks",
+      "relativePath": "benchmarks/techempower/upstream/FrameworkBenchmarks/frameworks/Java/servlet",
+      "language": "Java",
+      "classification": "Platform",
+      "port": 8080,
+      "fileCount": 27,
+      "variants": [
+        "default",
+        "lib-native",
+        "mysql",
+        "postgresql"
+      ],
+      "endpoints": {
+        "/plaintext": "/plaintext",
+        "/json": "/json",
+        "/db": "/db",
+        "/queries": "/queries?queries=",
+        "/fortunes": "/fortunes",
+        "/updates": "/update?queries=",
+        "/cached-queries": "/cached-worlds?queries="
+      },
+      "mappedFacades": [
+        "sectium-jvm-tier0",
+        "sectium-jvm-tier2-aot"
+      ],
+      "notes": "Standard Java Servlet specification reference; upstream update endpoint is /update?queries= (singular)."
+    },
+    {
+      "id": "php",
+      "displayName": "PHP",
+      "upstream": "FrameworkBenchmarks",
+      "relativePath": "benchmarks/techempower/upstream/FrameworkBenchmarks/frameworks/PHP/php",
+      "language": "PHP",
+      "classification": "Platform",
+      "port": 8080,
+      "fileCount": 41,
+      "variants": [
+        "default",
+        "raw7-tcp",
+        "pgsql-raw",
+        "h2o",
+        "pools",
+        "caddy",
+        "franken",
+        "workerman",
+        "eloquent",
+        "laravel-query-builder"
+      ],
+      "endpoints": {
+        "/plaintext": "/plaintext.php",
+        "/json": "/json.php",
+        "/db": "/dbraw.php",
+        "/queries": "/dbquery.php?queries=",
+        "/fortunes": "/fortune.php",
+        "/updates": "/updateraw.php?queries=",
+        "/cached-queries": null
+      },
+      "mappedFacades": [
+        "b8g-php-wasi"
+      ],
+      "notes": "Raw PHP 8.1+ scripts mapped to B8G WASI PHP microkernel runtime; upstream uses .php script paths."
+    }
+  ],
+  "facades": {
+    "c11-native": {
+      "runtimeLayer": "Awesome-OS / Zig C11 Native",
+      "upstreamFrameworks": [
+        "lwan"
+      ],
+      "tfbEndpoints": [
+        "/plaintext",
+        "/json",
+        "/db",
+        "/queries",
+        "/fortunes",
+        "/updates"
+      ]
+    },
+    "sectium-node": {
+      "runtimeLayer": "Sectium Node.js Compatibility Facade",
+      "upstreamFrameworks": [
+        "nodejs"
+      ],
+      "tfbEndpoints": [
+        "/plaintext",
+        "/json",
+        "/db",
+        "/queries",
+        "/fortunes",
+        "/updates"
+      ]
+    },
+    "just-js/lo": {
+      "runtimeLayer": "Awesome-OS just-js / lo Low-Overhead Binding Layer",
+      "upstreamFrameworks": [
+        "just-js"
+      ],
+      "tfbEndpoints": [
+        "/plaintext",
+        "/json",
+        "/db",
+        "/queries",
+        "/fortunes",
+        "/updates"
+      ]
+    },
+    "sectium-es": {
+      "runtimeLayer": "Sectium Native ECMAScript / TypeScript Engine",
+      "upstreamFrameworks": [
+        "nodejs",
+        "just-js"
+      ],
+      "tfbEndpoints": [
+        "/plaintext",
+        "/json",
+        "/db",
+        "/queries",
+        "/fortunes",
+        "/updates"
+      ]
+    },
+    "sectium-jvm-tier0": {
+      "runtimeLayer": "Sectium JVM Tier-0 Bytecode Interpreter",
+      "upstreamFrameworks": [
+        "servlet",
+        "undertow"
+      ],
+      "tfbEndpoints": [
+        "/plaintext",
+        "/json",
+        "/db",
+        "/queries",
+        "/fortunes",
+        "/updates"
+      ]
+    },
+    "sectium-jvm-tier2-aot": {
+      "runtimeLayer": "Sectium JVM Tier-2 AOT Native Compiler",
+      "upstreamFrameworks": [
+        "undertow",
+        "servlet"
+      ],
+      "tfbEndpoints": [
+        "/plaintext",
+        "/json",
+        "/db",
+        "/queries",
+        "/fortunes",
+        "/updates"
+      ]
+    },
+    "b8g-php-wasi": {
+      "runtimeLayer": "B8G Microkernel PHP-WASI Runtime",
+      "upstreamFrameworks": [
+        "php"
+      ],
+      "tfbEndpoints": [
+        "/plaintext",
+        "/json",
+        "/db",
+        "/queries",
+        "/fortunes",
+        "/updates"
+      ]
+    }
+  }
+}

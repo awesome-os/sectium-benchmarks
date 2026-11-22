@@ -1,0 +1,231 @@
+{
+  "generatedAt": "2026-11-22T15:37:56.331Z",
+  "host": {
+    "platform": "win32",
+    "arch": "x64",
+    "cpus": 20,
+    "cpuModel": "13th Gen Intel(R) Core(TM) i5-13600KF",
+    "nodeVersion": "v26.11.1"
+  },
+  "loadgen": {
+    "path": "E:\\awesome-os-techempower\\benchmarks\\techempower\\runner\\tfb-loadgen.exe",
+    "binaryBytes": 26112,
+    "binaryKb": 25.5,
+    "requestsPerCell": 4000,
+    "concurrencies": [
+      1,
+      8
+    ],
+    "paths": [
+      "/plaintext",
+      "/json"
+    ]
+  },
+  "httpMatrix": [
+    {
+      "facade": "c11-native",
+      "binaryPath": "E:\\awesome-os-techempower\\benchmarks\\techempower\\facades\\c11-native\\tfb-c11-native.exe",
+      "binaryBytes": 25088,
+      "binaryKb": 24.5,
+      "runtimeBytes": null,
+      "runtimeKb": null,
+      "coldStartMs": 12.24,
+      "compliance": [
+        {
+          "path": "/plaintext",
+          "statusCode": 200,
+          "contentType": "text/plain",
+          "serverHeader": "Sectium-C11",
+          "dateHeader": "Sun, 22 Nov 2026 15:37:54 GMT",
+          "body": "Hello, World!",
+          "passed": true
+        },
+        {
+          "path": "/json",
+          "statusCode": 200,
+          "contentType": "application/json",
+          "serverHeader": "Sectium-C11",
+          "dateHeader": "Sun, 22 Nov 2026 15:37:54 GMT",
+          "body": "{\"message\":\"Hello, World!\"}",
+          "passed": true
+        }
+      ],
+      "cells": [
+        {
+          "facade": "c11-native",
+          "path": "/plaintext",
+          "concurrency": 1,
+          "requests": 4000,
+          "ok": 4000,
+          "errors": 0,
+          "elapsedMs": 79.705,
+          "reqPerSec": 50185.12,
+          "p50Us": 19.6,
+          "p99Us": 47.1
+        },
+        {
+          "facade": "c11-native",
+          "path": "/plaintext",
+          "concurrency": 8,
+          "requests": 4000,
+          "ok": 4000,
+          "errors": 0,
+          "elapsedMs": 42.804,
+          "reqPerSec": 93448.99,
+          "p50Us": 70.8,
+          "p99Us": 144.3
+        },
+        {
+          "facade": "c11-native",
+          "path": "/json",
+          "concurrency": 1,
+          "requests": 4000,
+          "ok": 4000,
+          "errors": 0,
+          "elapsedMs": 81.299,
+          "reqPerSec": 49201.04,
+          "p50Us": 19.8,
+          "p99Us": 45.2
+        },
+        {
+          "facade": "c11-native",
+          "path": "/json",
+          "concurrency": 8,
+          "requests": 4000,
+          "ok": 4000,
+          "errors": 0,
+          "elapsedMs": 43.444,
+          "reqPerSec": 92072.34,
+          "p50Us": 70.6,
+          "p99Us": 169.2
+        }
+      ]
+    },
+    {
+      "facade": "sectium-node",
+      "binaryPath": "E:\\awesome-os-techempower\\benchmarks\\techempower\\facades\\sectium-node\\server.mjs",
+      "binaryBytes": 2111,
+      "binaryKb": 2.1,
+      "runtimeBytes": 105052136,
+      "runtimeKb": 102590,
+      "coldStartMs": 375.09,
+      "compliance": [
+        {
+          "path": "/plaintext",
+          "statusCode": 200,
+          "contentType": "text/plain",
+          "serverHeader": "Sectium-Node",
+          "dateHeader": "Sun, 22 Nov 2026 15:37:55 GMT",
+          "body": "Hello, World!",
+          "passed": true
+        },
+        {
+          "path": "/json",
+          "statusCode": 200,
+          "contentType": "application/json",
+          "serverHeader": "Sectium-Node",
+          "dateHeader": "Sun, 22 Nov 2026 15:37:55 GMT",
+          "body": "{\"message\":\"Hello, World!\"}",
+          "passed": true
+        }
+      ],
+      "cells": [
+        {
+          "facade": "sectium-node",
+          "path": "/plaintext",
+          "concurrency": 1,
+          "requests": 4000,
+          "ok": 4000,
+          "errors": 0,
+          "elapsedMs": 111.214,
+          "reqPerSec": 35966.57,
+          "p50Us": 26,
+          "p99Us": 96.2
+        },
+        {
+          "facade": "sectium-node",
+          "path": "/plaintext",
+          "concurrency": 8,
+          "requests": 4000,
+          "ok": 4000,
+          "errors": 0,
+          "elapsedMs": 84.434,
+          "reqPerSec": 47374.5,
+          "p50Us": 134,
+          "p99Us": 662.5
+        },
+        {
+          "facade": "sectium-node",
+          "path": "/json",
+          "concurrency": 1,
+          "requests": 4000,
+          "ok": 4000,
+          "errors": 0,
+          "elapsedMs": 122.978,
+          "reqPerSec": 32526.09,
+          "p50Us": 25.6,
+          "p99Us": 114.9
+        },
+        {
+          "facade": "sectium-node",
+          "path": "/json",
+          "concurrency": 8,
+          "requests": 4000,
+          "ok": 4000,
+          "errors": 0,
+          "elapsedMs": 72.44,
+          "reqPerSec": 55218.19,
+          "p50Us": 126.1,
+          "p99Us": 366.9
+        }
+      ]
+    }
+  ],
+  "runtimeMatrix": [
+    {
+      "id": "sectium-es",
+      "label": "sectium-es (Zero-V8 C11 ES)",
+      "binaryPath": "E:\\awesome-os\\sections\\b8g-es\\dist\\sectium-es.exe",
+      "binaryBytes": 96256,
+      "binaryKb": 94,
+      "artifactBytes": 1562,
+      "coldWallMs": 80.27,
+      "medianWallMs": 36.78,
+      "minWallMs": 35.98,
+      "internalElapsedMs": 22.407,
+      "stdout": "sectium-es tfb-bench iterations=10000 plaintext=5000 json=5000 total_bytes=1320000 elapsed_ms=22.4066 dup_v8=0B",
+      "verified": true,
+      "speedupVsTier0": null
+    },
+    {
+      "id": "sectium-jvm-tier0",
+      "label": "sectium-jvm Tier-0 (Zero-JDK Interpreter)",
+      "binaryPath": "E:\\awesome-os\\sections\\b8g-jvm\\dist\\sectium-jvm.exe",
+      "binaryBytes": 76800,
+      "binaryKb": 75,
+      "artifactBytes": 408,
+      "coldWallMs": 38.44,
+      "medianWallMs": 14.1,
+      "minWallMs": 14.07,
+      "internalElapsedMs": null,
+      "stdout": "75025 / 12742320",
+      "verified": true,
+      "speedupVsTier0": 1
+    },
+    {
+      "id": "sectium-jvm-tier2-aot",
+      "label": "sectium-jvm Tier-2 AOT (zig cc -O3 -s)",
+      "binaryPath": "E:\\awesome-os-techempower\\benchmarks\\techempower\\facades\\sectium-jvm\\tfb-jvm-aot.exe",
+      "binaryBytes": 43008,
+      "binaryKb": 42,
+      "artifactBytes": 408,
+      "coldWallMs": 6.93,
+      "medianWallMs": 4.54,
+      "minWallMs": 4.27,
+      "internalElapsedMs": null,
+      "stdout": "75025 / 12742320",
+      "verified": true,
+      "speedupVsTier0": 3.11
+    }
+  ]
+}
