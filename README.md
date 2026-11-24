@@ -61,3 +61,10 @@ E:\awesome-os\bin\node.ps1 E:\awesome-os-techempower\benchmarks\techempower\faca
 # 3. Execute the full cross-matrix and regenerate matrix-report.json / matrix-report.md
 E:\awesome-os\bin\node.ps1 E:\awesome-os-techempower\benchmarks\techempower\runner\run-matrix.mts
 ```
+
+## Quick Start (Windows / Linux / macOS)
+
+```sh
+# Clone & enter repository (all platforms)
+git clone https://github.com/awesome-os/sectium-benchmarks.git && cd sectium-benchmarks
+```
