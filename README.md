@@ -68,3 +68,13 @@ E:\awesome-os\bin\node.ps1 E:\awesome-os-techempower\benchmarks\techempower\runn
 # Clone & enter repository (all platforms)
 git clone https://github.com/awesome-os/sectium-benchmarks.git && cd sectium-benchmarks
 ```
+
+## Quick Install & Run (Windows / Linux / macOS)
+
+```sh
+# Install / hydrate from v11 CAS via holo-pm
+holo-pm install repository://github.com/awesome-os/sectium-benchmarks@main
+
+# Or project & run directly via holo-project (0-byte hardlink)
+holo-project "project://cpp/sectium-benchmarks?from=repository://github.com/awesome-os/sectium-benchmarks@main"
+```
