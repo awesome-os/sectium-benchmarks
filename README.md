@@ -1,3 +1,6 @@
+> [!NOTE]
+> Consolidated into https://github.com/awesome-os/chromium-baseline
+
 # Awesome-OS TechEmpower Cross-Matrix Benchmark Suite
 
 Minimal, reproducible TechEmpower Framework Benchmarks (TFB) cross-matrix suite for Awesome-OS facades (`c11-native`, `sectium-node`, `sectium-es`, `sectium-jvm` Tier-0 & Tier-2 AOT), isolated on branch `benchmarks/techempower`.
